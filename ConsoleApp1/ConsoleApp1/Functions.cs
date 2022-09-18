@@ -9,9 +9,15 @@ namespace PasswordGenerator
     public class Functions
     {
         public static (int, bool) ParseArgs(string[] args)
-        {
+
+        { 
+
+            Console.WriteLine("桁数を入力してください");
+            string userInput = Console.ReadLine() ?? "";
+            int suuti = Int32.Parse(userInput);
+
             //桁数の特定
-            if (args.Length < 1) return (10, true);
+            if (args.Length < 1) return (suuti, true);
 
             int digits;
             if (!int.TryParse(args[0], out digits))
